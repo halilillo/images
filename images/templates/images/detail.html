@@ -5,7 +5,7 @@
     {{ form.as_p }}
     <input type="submit" value="Отправить"/>
 </form>
-{% if base64_image%}
+{% if base64_image %}
     <img src="{{ base64_image }}"/> 
 {% else %}
     <img src="{{ image.source.url }}"/> 
