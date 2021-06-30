@@ -10,7 +10,7 @@ def get_image_from_url(url):
     response = requests.get(url, stream=True)
 
     if response.status_code != requests.codes.ok:
-        return
+        return None, None
 
     file_name = url.split("/")[-1]
 

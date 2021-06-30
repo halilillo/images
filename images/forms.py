@@ -26,6 +26,10 @@ class ImageForm(forms.ModelForm):
 
         if image_url:
             image, name = get_image_from_url(image_url)
+
+            if image is None:
+                raise forms.ValidationError("Не удалось загрузить изображение по ссылке.")
+            
             source = files.File(image, name=name)
 
         cleaned_data["source"] = source
