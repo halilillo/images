@@ -1,0 +1,10 @@
+<h3>Список изображений</h3>
+
+{% for image in images %}
+    <a href="{% url 'image_detail' image.id %}">{{ image.filename }}</a>
+    <br><br>
+{% empty %}
+    Нет доступных изображений
+{% endfor %}
+
+<a href="{% url 'image_create' %}">Добавить изображение</a>
